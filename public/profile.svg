@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <rect width="400" height="500" fill="#0a0a0a"/>
+  <!-- Grid -->
+  <path d="M0 100h400M0 200h400M0 300h400M0 400h400M100 0v500M200 0v500M300 0v500" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Silhouette -->
+  <g fill="none" stroke="#2a2a2a" stroke-width="4">
+    <!-- Shoulders -->
+    <path d="M 50,500 C 50,380 120,320 200,320 C 280,320 350,380 350,500" stroke-dasharray="10 5"/>
+    <!-- Head -->
+    <circle cx="200" cy="200" r="80" stroke-dasharray="10 5"/>
+    <!-- Face / Eyes area placeholder -->
+    <rect x="160" y="170" width="80" height="30" stroke="#2a2a2a" stroke-width="2" stroke-dasharray="4 2"/>
+    <!-- Badge area placeholder -->
+    <rect x="120" y="380" width="40" height="60" stroke="#2a2a2a" stroke-width="2" stroke-dasharray="4 2"/>
+  </g>
+  
+  <!-- Scanning details overlay (static part) -->
+  <circle cx="200" cy="200" r="120" stroke="#6FCBFF" stroke-width="1" fill="none" opacity="0.1" stroke-dasharray="2 10"/>
+  <path d="M 200,80 L 200,320" stroke="#6FCBFF" stroke-width="1" opacity="0.1" stroke-dasharray="4 4"/>
+  <path d="M 80,200 L 320,200" stroke="#6FCBFF" stroke-width="1" opacity="0.1" stroke-dasharray="4 4"/>
+</svg>
