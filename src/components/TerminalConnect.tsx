@@ -15,15 +15,16 @@ export function TerminalConnect() {
   
   // Simulate auto-typing commands for dramatic effect on mount
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let isMounted = true;
     const runSequence = async () => {
       for (const item of commands) {
         await new Promise(r => setTimeout(r, 800));
+        if (!isMounted) break;
         setHistory(prev => [...prev, { cmd: item.cmd, out: item.out }]);
       }
     };
     runSequence();
-    return () => clearTimeout(timeout);
+    return () => { isMounted = false; };
   }, []);
 
   return (
