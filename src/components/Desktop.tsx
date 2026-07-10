@@ -3,14 +3,25 @@
 import { useState } from "react";
 import { Window } from "./Window";
 import { HeroIdentity } from "./HeroIdentity";
-import { PersonnelFile } from "./PersonnelFile";
-import { HardwareDiagnostics } from "./HardwareDiagnostics";
-import { MissionReports } from "./MissionReports";
-import { MissionArchive } from "./MissionArchive";
-import { TerminalConnect } from "./TerminalConnect";
-import { Terminal, Briefcase, Mail, FileText, BookOpen } from "lucide-react";
+import { Terminal, Briefcase, Mail, FileText, BookOpen, Lock } from "lucide-react";
 
-type AppName = "⌂ Home" | "⌘ Projects" | "⌬ Experiments" | "⚡ Research" | "✎ Blog" | "☎ Contact" | "ⓘ System Info";
+type AppName = "⌂ Home" | "⌘ Projects" | "⚡ Experience" | "⌬ Education" | "✎ Blog" | "☎ Contact" | "ⓘ System Info";
+
+function RevealedSoon({ title }: { title: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center p-8">
+      <Lock className="text-warning-red mb-4 w-12 h-12 animate-pulse" />
+      <h2 className="text-xl font-bold uppercase tracking-widest text-warning-red mb-2">ACCESS RESTRICTED</h2>
+      <p className="text-muted-grey text-sm font-mono max-w-md">
+        The {title} module is currently classified. Decryption sequence initiated. 
+        Content will be revealed soon.
+      </p>
+      <div className="mt-8 w-64 h-1 bg-grid-lines relative overflow-hidden">
+        <div className="absolute top-0 left-0 h-full bg-warning-red w-1/3 animate-scan" style={{ animationDuration: '2s' }} />
+      </div>
+    </div>
+  );
+}
 
 export function Desktop() {
   const [openApps, setOpenApps] = useState<AppName[]>(["⌂ Home"]);
@@ -30,8 +41,8 @@ export function Desktop() {
   const navItems: AppName[] = [
     "⌂ Home",
     "⌘ Projects",
-    "⚡ Research",
-    "⌬ Experiments",
+    "⚡ Experience",
+    "⌬ Education",
     "✎ Blog",
     "☎ Contact",
     "ⓘ System Info",
@@ -97,31 +108,31 @@ export function Desktop() {
             onClose={() => closeApp("⌘ Projects")}
             defaultPosition={{ x: 30, y: 30 }}
           >
-            <MissionReports />
+            <RevealedSoon title="Projects" />
           </Window>
         )}
 
-        {openApps.includes("⌬ Experiments") && (
+        {openApps.includes("⚡ Experience") && (
           <Window 
-            title="⌬ Experiments // PROTOTYPES" 
-            isActive={activeApp === "⌬ Experiments"} 
-            onClick={() => setActiveApp("⌬ Experiments")}
-            onClose={() => closeApp("⌬ Experiments")}
+            title="⚡ Experience // DOSSIER" 
+            isActive={activeApp === "⚡ Experience"} 
+            onClick={() => setActiveApp("⚡ Experience")}
+            onClose={() => closeApp("⚡ Experience")}
             defaultPosition={{ x: 60, y: 60 }}
           >
-            <HardwareDiagnostics />
+            <RevealedSoon title="Experience" />
           </Window>
         )}
 
-        {openApps.includes("⚡ Research") && (
+        {openApps.includes("⌬ Education") && (
           <Window 
-            title="⚡ Research // PUBLICATIONS" 
-            isActive={activeApp === "⚡ Research"} 
-            onClick={() => setActiveApp("⚡ Research")}
-            onClose={() => closeApp("⚡ Research")}
+            title="⌬ Education // ACADEMICS" 
+            isActive={activeApp === "⌬ Education"} 
+            onClick={() => setActiveApp("⌬ Education")}
+            onClose={() => closeApp("⌬ Education")}
             defaultPosition={{ x: 90, y: 90 }}
           >
-            <PersonnelFile />
+            <RevealedSoon title="Education" />
           </Window>
         )}
 
@@ -133,7 +144,7 @@ export function Desktop() {
             onClose={() => closeApp("✎ Blog")}
             defaultPosition={{ x: 120, y: 120 }}
           >
-            <MissionArchive />
+            <RevealedSoon title="Blog" />
           </Window>
         )}
 
@@ -145,7 +156,19 @@ export function Desktop() {
             onClose={() => closeApp("☎ Contact")}
             defaultPosition={{ x: 150, y: 150 }}
           >
-            <TerminalConnect />
+            <RevealedSoon title="Contact" />
+          </Window>
+        )}
+
+        {openApps.includes("ⓘ System Info") && (
+          <Window 
+            title="ⓘ System Info // HARDWARE" 
+            isActive={activeApp === "ⓘ System Info"} 
+            onClick={() => setActiveApp("ⓘ System Info")}
+            onClose={() => closeApp("ⓘ System Info")}
+            defaultPosition={{ x: 180, y: 180 }}
+          >
+            <RevealedSoon title="System Info" />
           </Window>
         )}
       </div>
