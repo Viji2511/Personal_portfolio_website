@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const commands = [
-  { cmd: "ping email", out: "Reply from [ENCRYPTED]: bytes=32 time<1ms TTL=64\n> TARGET: hello@vijayalakshmi.ai" },
-  { cmd: "ssh linkedin", out: "Connecting to LinkedIn Mainframe...\nAuthentication successful.\n> PROFILE: linkedin.com/in/vijayalakshmi" },
-  { cmd: "curl github", out: "Fetching repositories...\n200 OK\n> REPO: github.com/vijayalakshmi" },
-  { cmd: "cat resume.pdf", out: "Decoding binary stream...\n> RESUME: /assets/resume_latest.pdf" }
+  { cmd: "ping email", out: "Reply from [ENCRYPTED]: bytes=32 time<1ms TTL=64\n> TARGET: viji25112005@gmail.com" },
+  { cmd: "ssh linkedin", out: "Connecting to LinkedIn Mainframe...\nAuthentication successful.\n> PROFILE: linkedin.com/in/vijaya-lakshmi-m" },
+  { cmd: "curl github", out: "Fetching repositories...\n200 OK\n> REPO: github.com/Viji2511" },
+  { cmd: "dial phone", out: "Establishing secure line...\n> SIGNAL: +91 9042876306" }
 ];
 
 export function TerminalConnect() {
@@ -60,17 +60,17 @@ export function TerminalConnect() {
       
       {/* Interactive Links disguised as command outputs */}
       <div className="border-t border-grid-lines pt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-xs uppercase tracking-widest text-center">
-        <a href="mailto:hello@example.com" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
+        <a href="mailto:viji25112005@gmail.com" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
           [ EMAIL ]
         </a>
-        <a href="#" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
+        <a href="https://www.linkedin.com/in/vijaya-lakshmi-m/" target="_blank" rel="noopener noreferrer" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
           [ LINKEDIN ]
         </a>
-        <a href="#" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
+        <a href="https://github.com/Viji2511" target="_blank" rel="noopener noreferrer" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
           [ GITHUB ]
         </a>
-        <a href="#" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
-          [ RESUME ]
+        <a href="tel:9042876306" className="border border-grid-lines p-2 hover:border-crt-cyan hover:text-crt-cyan transition-colors bg-secondary/30">
+          [ PHONE ]
         </a>
       </div>
     </div>

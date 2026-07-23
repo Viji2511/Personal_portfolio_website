@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { Window } from "./Window";
 import { HeroIdentity } from "./HeroIdentity";
+import { Education } from "./Education";
+import { MissionArchive } from "./MissionArchive";
+import { TerminalConnect } from "./TerminalConnect";
 import { Terminal, Briefcase, Mail, FileText, BookOpen, Lock } from "lucide-react";
 
-type AppName = "⌂ Home" | "⌘ Projects" | "⚡ Experience" | "⌬ Education" | "✎ Blog" | "☎ Contact" | "ⓘ System Info";
+type AppName = "⌂ Home" | "⌘ Projects" | "⚡ Experience" | "⌬ Education" | "✎ Blog" | "☎ Contact";
 
 function RevealedSoon({ title }: { title: string }) {
   return (
@@ -45,32 +48,22 @@ export function Desktop() {
     "⌬ Education",
     "✎ Blog",
     "☎ Contact",
-    "ⓘ System Info",
   ];
 
   return (
     <div className="flex flex-col md:flex-row h-full w-full p-2 md:p-4 gap-4 relative z-10 font-mono">
       {/* Social Links Top Right */}
       <div className="absolute top-4 right-4 hidden md:flex items-center gap-4 z-50">
-        <a href="#" className="text-muted-grey hover:text-crt-cyan transition-colors" title="GitHub"><Terminal size={18} /></a>
-        <a href="#" className="text-muted-grey hover:text-crt-cyan transition-colors" title="LinkedIn"><Briefcase size={18} /></a>
-        <a href="#" className="text-muted-grey hover:text-crt-cyan transition-colors" title="Medium"><BookOpen size={18} /></a>
-        <a href="#" className="text-muted-grey hover:text-crt-cyan transition-colors" title="Email"><Mail size={18} /></a>
+        <a href="https://github.com/Viji2511" target="_blank" rel="noopener noreferrer" className="text-muted-grey hover:text-crt-cyan transition-colors" title="GitHub"><Terminal size={18} /></a>
+        <a href="https://www.linkedin.com/in/vijaya-lakshmi-m/" target="_blank" rel="noopener noreferrer" className="text-muted-grey hover:text-crt-cyan transition-colors" title="LinkedIn"><Briefcase size={18} /></a>
+        <a href="https://medium.com/@vijayalakshmi2310105" target="_blank" rel="noopener noreferrer" className="text-muted-grey hover:text-crt-cyan transition-colors" title="Medium"><BookOpen size={18} /></a>
+        <a href="mailto:viji25112005@gmail.com" className="text-muted-grey hover:text-crt-cyan transition-colors" title="Email"><Mail size={18} /></a>
         <a href="#" className="text-muted-grey hover:text-crt-cyan transition-colors" title="Resume"><FileText size={18} /></a>
       </div>
 
       {/* Side Navigation / System Status Panel */}
       <aside className="w-full md:w-64 border-hud flex flex-row md:flex-col p-4 shrink-0 bg-pure-black/50 overflow-x-auto md:overflow-visible h-auto md:h-full gap-4 md:gap-0 mt-8 md:mt-0">
-        <div className="md:mb-8 md:border-b border-grid-lines md:pb-4 shrink-0 pr-4 border-r md:border-r-0 md:pr-0">
-          <h2 className="text-crt-cyan text-sm uppercase tracking-widest animate-flicker whitespace-nowrap">PROFESSIONAL METRICS</h2>
-          <ul className="text-xs mt-2 space-y-1 font-numbers text-muted-grey hidden md:block">
-            <li className="flex justify-between"><span>EXPERIENCE</span> <span className="text-off-white">4+ Years</span></li>
-            <li className="flex justify-between"><span>PROJECTS</span> <span className="text-electric-blue">15+</span></li>
-            <li className="flex justify-between"><span>RESEARCH</span> <span>4</span></li>
-            <li className="flex justify-between"><span>OPEN SOURCE</span> <span>20+</span></li>
-            <li className="flex justify-between"><span>COMMITS</span> <span>300+</span></li>
-          </ul>
-        </div>
+
 
         <nav className="flex-1 flex flex-row md:flex-col gap-2 shrink-0 md:shrink items-center md:items-stretch overflow-x-auto md:overflow-visible">
           {navItems.map((item) => (
@@ -132,7 +125,7 @@ export function Desktop() {
             onClose={() => closeApp("⌬ Education")}
             defaultPosition={{ x: 90, y: 90 }}
           >
-            <RevealedSoon title="Education" />
+            <Education />
           </Window>
         )}
 
@@ -144,7 +137,7 @@ export function Desktop() {
             onClose={() => closeApp("✎ Blog")}
             defaultPosition={{ x: 120, y: 120 }}
           >
-            <RevealedSoon title="Blog" />
+            <MissionArchive />
           </Window>
         )}
 
@@ -156,21 +149,11 @@ export function Desktop() {
             onClose={() => closeApp("☎ Contact")}
             defaultPosition={{ x: 150, y: 150 }}
           >
-            <RevealedSoon title="Contact" />
+            <TerminalConnect />
           </Window>
         )}
 
-        {openApps.includes("ⓘ System Info") && (
-          <Window 
-            title="ⓘ System Info // HARDWARE" 
-            isActive={activeApp === "ⓘ System Info"} 
-            onClick={() => setActiveApp("ⓘ System Info")}
-            onClose={() => closeApp("ⓘ System Info")}
-            defaultPosition={{ x: 180, y: 180 }}
-          >
-            <RevealedSoon title="System Info" />
-          </Window>
-        )}
+
       </div>
     </div>
   );

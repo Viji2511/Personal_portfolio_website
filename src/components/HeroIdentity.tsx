@@ -111,16 +111,16 @@ export function HeroIdentity() {
           <a href="#" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
             <FileText size={14} /> Resume
           </a>
-          <a href="#" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
+          <a href="https://github.com/Viji2511" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
             <Terminal size={14} /> GitHub
           </a>
-          <a href="#" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
+          <a href="https://www.linkedin.com/in/vijaya-lakshmi-m/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
             <Briefcase size={14} /> LinkedIn
           </a>
-          <a href="#" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
+          <a href="https://medium.com/@vijayalakshmi2310105" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
             <BookOpen size={14} /> Medium
           </a>
-          <a href="#" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
+          <a href="mailto:viji25112005@gmail.com" className="flex items-center gap-2 border border-grid-lines hover:border-crt-cyan text-off-white hover:text-crt-cyan hover:bg-crt-cyan/10 transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-pure-black">
             <Mail size={14} /> Email
           </a>
           <a href="#" className="flex items-center gap-2 border border-electric-blue/50 text-electric-blue hover:bg-electric-blue hover:text-pure-black transition-colors px-4 py-2 text-xs uppercase tracking-wider bg-electric-blue/10">
@@ -140,7 +140,7 @@ export function HeroIdentity() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none z-20"
             >
               {/* Identity Panel */}
               <motion.div 
